@@ -1,0 +1,1 @@
+These are the MySQL database exercises from Codeup
