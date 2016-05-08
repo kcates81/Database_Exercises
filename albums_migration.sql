@@ -1,6 +1,6 @@
 USE codeup_test_db;
 
-DROP IF EXISTS albums;
+DROP TABLE IF EXISTS albums;
 
 CREATE TABLE albums (
 id INT UNSIGNED AUTO_INCREMENT,
