@@ -3,7 +3,8 @@ FROM employees
 WHERE first_name IN ('Irena')
 	OR first_name = 'Vidya'
 	OR first_name = 'Maya'
-		AND gender = 'male';
+		AND gender = 'male'
+	ORDER BY first_name;
 
 SELECT emp_no, first_name, last_name
 FROM employees
