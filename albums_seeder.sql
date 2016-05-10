@@ -28,3 +28,6 @@ VALUES ('29.6 M'),
 ('17.9 M'),
 ('19.3 M'),
 ('21.6 M');
+
+ALTER TABLE albums
+ADD UNIQUE (name, artist);
