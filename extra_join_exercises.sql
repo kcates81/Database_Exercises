@@ -34,3 +34,12 @@ JOIN departments AS d
 JOIN salaries AS s
     ON s.emp_no = dm.emp_no
 WHERE dm.emp_no = e.emp_no AND dm.to_date > NOW() AND s.to_date > NOW();
+
+SELECT d.dept_no, d.dept_name, CONCAT(e.first_name, ' ', e.last_name) AS full_name, e.gender
+FROM employees AS e
+JOIN dept_manager AS dm
+  ON dm.emp_no = e.emp_no
+JOIN departments AS d
+  ON d.dept_no = dm.dept_no
+WHERE e.gender = 'F'
+AND dm.to_date = '9999-01-01';
