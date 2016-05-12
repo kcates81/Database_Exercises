@@ -43,3 +43,17 @@ JOIN departments AS d
   ON d.dept_no = dm.dept_no
 WHERE e.gender = 'F'
 AND dm.to_date = '9999-01-01';
+
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, d.dept_name AS  department_name, CONCAT(m.first_name, ' ', m.last_name) AS manager_name
+FROM employees AS e
+JOIN dept_manager AS dm
+  ON dm.emp_no = e.emp_no
+JOIN departments AS d
+  ON d.dept_no = dm.dept_no
+JOIN dept_emp AS de
+  ON de.emp_no - e.emp_no 
+JOIN employees AS m 
+  ON dm.emp_no = m.emp_no
+JOIN titles as t 
+  ON e.emp_no = t.emp_no
+WHERE de.to_date > NOW() AND dm.to_date > NOW() AND t.to_date > NOW();
